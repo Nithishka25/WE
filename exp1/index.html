@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GCT Interactive Page</title>
+  <link rel="stylesheet" href="styles.css" /> <!-- External CSS -->
+  <style>
+    /* Internal CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left,
+    .right {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .left {
+      background-color: #e0f7fa;
+      border-right: 2px solid #ccc;
+    }
+
+    .right {
+      background-color: #f9fbe7;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #333;
+      margin-top: 10px;
+    }
+
+    .logo {
+      width: 200px;
+      height: auto;
+    }
+
+    .gct-header {
+      display: flex;
+      flex-direction: column; /* Stack vertically */
+      align-items: center; /* Center horizontally */
+      text-align: center;
+    }
+
+    .form-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gct-description {
+      font-size: 20px;
+      color: black;
+      text-align: justify;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+  </style>
+
+  <script>
+    // JavaScript to show alert on form submission
+    function handleSubmit(event) {
+      event.preventDefault(); // prevent actual form submission (page reload)
+      alert("Form is submitted");
+      // You can add further form processing here if needed
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <!-- LEFT PART: About GCT -->
+    <div class="left">
+      <div class="gct-header">
+        <img
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/85b98649037013.560848de7ce32.jpg"
+          alt="GCT Logo"
+          class="logo"
+        />
+        <h2 style="color: #006064; font-size: 24px;">Government College of Technology</h2>
+        <p class="gct-description">
+          Government College of Technology, Coimbatore was founded in 1945 as Arthur Hope College of Technology, named after Arthur Hope,
+          Governor of Madras Presidency (1940–46) under the patronage of philanthropist G.D. Naidu.The College was modelled after the then
+          famous Germany’s technical institutions with inputs by the Stoll family and Hermann WeilerIn June 1950, the college moved to the
+          present site of about 45 hectares on Thadagam Road, Coimbatore. The main building of the college was inaugurated by President Dr.
+          Sarvepalli Radhakrishnan on October 8, 1959.
+        </p>
+      </div>
+
+      <ul style="line-height: 1.8; margin-top: 20px;">
+        <!-- Inline CSS -->
+        <li><a href="https://gct.ac.in/about-institute" target="_blank">About</a></li>
+        <li><a href="https://gct.ac.in/programme" target="gct-frame">Departments</a></li>
+        <li><a href="https://gct.ac.in/facilities" target="gct-frame">Facilities</a></li>
+        <li><a href="https://gct.ac.in/contact" target="gct-frame">Contact</a></li>
+      </ul>
+      <iframe
+        name="gct-frame"
+        src="https://en.wikipedia.org/wiki/Government_College_of_Technology,_Coimbatore"
+      ></iframe>
+    </div>
+
+    <!-- RIGHT PART: Registration Form -->
+    <div class="right">
+      <div class="form-center">
+        <h2 style="color: #33691e; font-size: 24px;">Student Registration Form</h2>
+        <form action="#" method="post" class="form-box" onsubmit="handleSubmit(event)">
+          <label for="name">Full Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your Name"
+            required
+            style="background-color: #e8f5e9;"
+          />
+
+          <label for="email">Email ID:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your Email"
+            required
+            style="background-color: #e8f5e9;"
+          />
+
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="[0-9]{10}"
+            placeholder="Enter 10-digit phone number"
+            required
+            style="background-color: #e8f5e9;"
+          />
+
+          <label for="department">Department:</label>
+          <select
+            id="department"
+            name="department"
+            style="background-color: #e8f5e9;"
+          >
+            <option></option>
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>IT</option>
+            <option>CIVIL</option>
+          </select>
+
+          <label for="gender">Gender:</label>
+          <div class="gender">
+            <input type="radio" id="male" name="gender" value="male" required />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+          </div>
+
+          <label for="dob">Date of Birth:</label>
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+            required
+            style="background-color: #e8f5e9;"
+          />
+
+          <input type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
