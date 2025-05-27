@@ -1,0 +1,127 @@
+//roll
+
+-- Create database
+CREATE DATABASE student_db;
+
+-- Use the database
+USE student_db;
+
+-- Create table
+CREATE TABLE students (
+    rollno VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(100),
+    class VARCHAR(50)
+);
+
+-- Insert sample data
+INSERT INTO students (rollno, name, class) VALUES
+('101', 'Alice Smith', '10A'),
+('102', 'Bob Johnson', '10B'),
+('103', 'Charlie Davis', '10C');
+
+
+//
+
+CREATE DATABASE ecommerce;
+
+USE ecommerce;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50),
+  password VARCHAR(50)
+);
+
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  category VARCHAR(50),
+  price DECIMAL(10,2),
+  stock INT
+);
+
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  product_id INT,
+  quantity INT,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+INSERT INTO products (name, category, price, stock) VALUES
+('Casual T-Shirt', 'Clothing', 499.00, 20),
+('Formal Shirt', 'Clothing', 899.00, 15),
+('Jeans Pants', 'Clothing', 1299.00, 10),
+('Leather Jacket', 'Clothing', 2499.00, 5),
+('Sneakers', 'Clothing', 1999.00, 12),
+
+('Smartphone', 'Electronics', 14999.00, 8),
+('Laptop', 'Electronics', 59999.00, 5),
+('Bluetooth Headphones', 'Electronics', 1999.00, 18),
+('Smart Watch', 'Electronics', 2999.00, 10),
+('Tablet', 'Electronics', 24999.00, 6),
+
+('Wooden Sofa', 'Furniture', 15999.00, 2),
+('Dining Table', 'Furniture', 12999.00, 3),
+('Office Chair', 'Furniture', 3999.00, 7),
+('Bookshelf', 'Furniture', 3499.00, 4),
+('Queen Bed', 'Furniture', 21999.00, 2),
+
+('Mixer Grinder', 'Appliances', 2999.00, 10),
+('Microwave Oven', 'Appliances', 5999.00, 6),
+('Refrigerator', 'Appliances', 17999.00, 4),
+('Washing Machine', 'Appliances', 18999.00, 3),
+('Electric Kettle', 'Appliances', 999.00, 15),
+
+('Cricket Bat', 'Sports', 1499.00, 10),
+('Football', 'Sports', 799.00, 12),
+('Yoga Mat', 'Sports', 499.00, 20),
+('Dumbbell Set', 'Sports', 1299.00, 6),
+('Badminton Racket', 'Sports', 899.00, 8);
+
+//quiz
+
+CREATE DATABASE IF NOT EXISTS quiz;
+USE quiz;
+
+CREATE TABLE IF NOT EXISTS questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question TEXT NOT NULL,
+    option1 VARCHAR(255) NOT NULL,
+    option2 VARCHAR(255) NOT NULL,
+    option3 VARCHAR(255) NOT NULL,
+    option4 VARCHAR(255) NOT NULL,
+    answer INT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    score INT NOT NULL,
+    attempt_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert 20 questions
+INSERT INTO questions (question, option1, option2, option3, option4, answer) VALUES
+('What does PHP stand for?', 'Personal Home Page', 'Private Home Page', 'PHP: Hypertext Preprocessor', 'Public Hypertext Processor', 3),
+('Which of the following is a server-side scripting language?', 'HTML', 'CSS', 'JavaScript', 'PHP', 4),
+('Which function is used to output text in PHP?', 'echo', 'print', 'write', 'display', 1),
+('Which symbol is used to declare a variable in PHP?', '$', '#', '&', '*', 1),
+('Which superglobal variable is used to collect form data sent with the GET method?', '$_POST', '$_GET', '$_REQUEST', '$_SESSION', 2),
+('Which of the following is used to start a session in PHP?', 'session_start()', 'start_session()', 'begin_session()', 'init_session()', 1),
+('Which of the following is used to include a file in PHP?', 'include', 'require', 'both include and require', 'None of the above', 3),
+('Which of the following is not a PHP data type?', 'String', 'Integer', 'Float', 'Character', 4),
+('Which of the following is used to create a function in PHP?', 'function', 'def', 'func', 'create', 1),
+('Which of the following is used to terminate a script in PHP?', 'exit()', 'die()', 'both exit() and die()', 'stop()', 3),
+('Which of the following is used to connect to a MySQL database in PHP?', 'mysql_connect()', 'mysqli_connect()', 'pdo_connect()', 'connect()', 2),
+('Which of the following is used to fetch a result row as an associative array in PHP?', 'mysql_fetch_row()', 'mysql_fetch_assoc()', 'mysql_fetch_array()', 'mysql_fetch_object()', 2),
+('Which of the following is used to check if a file exists in PHP?', 'file_exists()', 'is_file()', 'file_check()', 'exists()', 1),
+('Which of the following is used to redirect a page in PHP?', 'header()', 'redirect()', 'location()', 'goto()', 1),
+('Which of the following is used to get the length of a string in PHP?', 'strlen()', 'length()', 'str_length()', 'get_length()', 1),
+('Which of the following is used to sort an array in ascending order in PHP?', 'sort()', 'asort()', 'ksort()', 'rsort()', 1),
+('Which of the following is used to remove whitespace from the beginning and end of a string in PHP?', 'trim()', 'ltrim()', 'rtrim()', 'strip()', 1),
+('Which of the following is used to check if a variable is set in PHP?', 'isset()', 'is_set()', 'check()', 'defined()', 1),
+('Which of the following is used to destroy a session in PHP?', 'session_destroy()', 'destroy_session()', 'end_session()', 'unset_session()', 1),
+('Which of the following is used to get the current date and time in PHP?', 'date()', 'time()', 'now()', 'current_time()', 1);
+
