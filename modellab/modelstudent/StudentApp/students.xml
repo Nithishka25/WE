@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <roll>101</roll>
+        <name>John Doe</name>
+        <age>20</age>
+        <department>CSE</department>
+    </student>
+    <student>
+        <roll>102</roll>
+        <name>Jane Smith</name>
+        <age>21</age>
+        <department>ECE</department>
+    </student>
+    <student>
+        <roll>103</roll>
+        <name>Bob Lee</name>
+        <age>22</age>
+        <department>MECH</department>
+    </student>
+</students>
